@@ -72,6 +72,7 @@ def parse_planet_parameters(line, planet):
     **line** — строка с описание планеты.
     **planet** — объект планеты.
     """
+    print('0000')
     type, radius, color, m, star_x, star_y, star_vx, star_vy = line.split()
     if type == 'Planet':
         planet.R = int(radius)
@@ -81,7 +82,6 @@ def parse_planet_parameters(line, planet):
         planet.y = float(star_y)
         planet.Vx = float(star_vx)
         planet.Vy = float(star_vy)
-
 
 def write_space_objects_data_to_file(output_filename, space_objects):
     """Сохраняет данные о космических объектах в файл.
