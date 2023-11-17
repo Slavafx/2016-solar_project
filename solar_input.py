@@ -48,15 +48,15 @@ def parse_star_parameters(line, star):
     **star** — объект звезды.
     """
 
-    type, radius, color, m, star_x, star_y, star_vx, star_vy = line.split() # FIXME: not done yet
+    type, radius, color, m, star_x, star_y, star_vx, star_vy = line.split()
     if type == 'Star':
         star.R = int(radius)
         star.color = color
-        star.m = m
-        star.x = star_x
-        star.y = star_y
-        star.Vx = star_vx
-        star.Vy = star_vy
+        star.m = float(m)
+        star.x = float(star_x)
+        star.y = float(star_y)
+        star.Vx = float(star_vx)
+        star.Vy = float(star_vy)
 def parse_planet_parameters(line, planet):
     """Считывает данные о планете из строки.
     Предполагается такая строка:
@@ -72,7 +72,15 @@ def parse_planet_parameters(line, planet):
     **line** — строка с описание планеты.
     **planet** — объект планеты.
     """
-    pass  # FIXME: not done yet...
+    type, radius, color, m, star_x, star_y, star_vx, star_vy = line.split()
+    if type == 'Planet':
+        planet.R = int(radius)
+        planet.color = color
+        planet.m = float(m)
+        planet.x = float(star_x)
+        planet.y = float(star_y)
+        planet.Vx = float(star_vx)
+        planet.Vy = float(star_vy)
 
 
 def write_space_objects_data_to_file(output_filename, space_objects):
